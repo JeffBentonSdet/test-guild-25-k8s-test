@@ -1,0 +1,14 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "basic unit test",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jeff Benton",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
