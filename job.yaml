@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-1
+spec:
+  template:
+    spec:
+      containers:
+      - name: unit-test
+        image: jrbtx909/unit-test-js:0.1
+      restartPolicy: Never
+  backoffLimit: 1
+
+
