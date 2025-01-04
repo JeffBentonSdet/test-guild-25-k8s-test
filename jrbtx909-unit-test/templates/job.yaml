@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "jrbtx909-unit-test.fullname" . }}
+
+spec:
+  template:
+    spec:
+      containers:
+      - name: unit-test
+        image: {{.Values.job.image}}
+      restartPolicy: Never
+  backoffLimit: 1
+
+
