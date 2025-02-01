@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "jrbtx909-unit-test.fullname" . }}
+  name: {{ include "unit-test-js.fullname" . }}
 
 spec:
   template:
