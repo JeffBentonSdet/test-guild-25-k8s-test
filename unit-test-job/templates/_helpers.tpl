@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "jrbtx909-unit-test.name" -}}
+{{- define "unit-test-js.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "jrbtx909-unit-test.fullname" -}}
+{{- define "unit-test-js.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "jrbtx909-unit-test.chart" -}}
+{{- define "unit-test-js.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "jrbtx909-unit-test.labels" -}}
-helm.sh/chart: {{ include "jrbtx909-unit-test.chart" . }}
-{{ include "jrbtx909-unit-test.selectorLabels" . }}
+{{- define "unit-test-js.labels" -}}
+helm.sh/chart: {{ include "unit-test-js.chart" . }}
+{{ include "unit-test-js.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "jrbtx909-unit-test.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "jrbtx909-unit-test.name" . }}
+{{- define "unit-test-js.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "unit-test-js.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "jrbtx909-unit-test.serviceAccountName" -}}
+{{- define "unit-test-js.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "jrbtx909-unit-test.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "unit-test-js.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

@@ -1,0 +1,3 @@
+job:
+  name: test-3
+  image: jeffbentonsdet/unit-test-js:0.1

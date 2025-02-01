@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "unit-test-js.fullname" . }}
+  name: {{ include "unit-test-job.fullname" . }}
 
 spec:
   template:
@@ -11,5 +11,3 @@ spec:
         image: {{.Values.job.image}}
       restartPolicy: Never
   backoffLimit: 1
-
-

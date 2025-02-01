@@ -53,6 +53,8 @@ docker push ${DOCKER_USER_ID}/unit-test-js:0.1
 ```
 minikube start
 minikube status
+
+# separate terminal
 minikube dashboard
 ```
 ## Run the job, v1
@@ -93,7 +95,7 @@ helm create helm-chart-1
 ```
 ## Install via helm
 ```
-helm install release-name-1 unit-test-js
+helm install release-name-1 unit-test-job
 ```
 
 ## helm + Tilt

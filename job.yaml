@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: unit-test
-        image: jrbtx909/unit-test-js:0.1
+        image: jeffbentonsdet/unit-test-js:0.1
       restartPolicy: Never
   backoffLimit: 1
 
